@@ -1,0 +1,164 @@
+ body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1b2838;
+    color: white;
+    
+}
+
+header {
+    position: relative;
+    background-color: #171a21;
+    padding:1rem;
+    height: 5vh;
+    
+}
+
+header ul {
+    padding: 0;
+    align-items: center;
+    margin: auto;
+    width: 50%;
+    list-style-type: none;
+    
+}
+
+header ul li {
+    float: left;
+    padding: 1.4% 4%;
+   
+}
+
+ .clear { 
+    clear: both;
+} 
+
+header ul li a {
+    text-decoration-line: none;
+    color: white;
+    font-weight: bold;
+}
+section {
+    margin: 1vh auto;
+    padding: 20px;
+    text-align: center;
+}
+
+section h1{
+    text-align: center;
+    text-transform: capitalize;
+}
+
+ header ul li a:hover,header ul li a.active {
+    color: #66c0f4;
+    border-bottom: 2px #66c0f4 solid;
+    
+    
+}
+.game-table {
+    width: 70%;
+    margin: auto;
+    
+}
+
+table {
+    
+    margin:auto;
+    border-collapse: collapse;
+    
+
+}
+caption {
+    font-weight: bold;
+    padding-bottom: 5px;
+    font-size: 20px;
+}
+
+th {
+    padding: 12px;
+    text-align: left;
+    background-color: #101822;
+    font-weight: 500;
+}
+
+td {
+    text-align: left;
+    border-bottom: #2a475e solid 1px;
+}
+
+tr:hover {
+    background-color:#1f2f42;
+    transition: 0.2s;
+}
+
+/* change color of 4th td from all columns */
+td:nth-child(4) {
+    color: #a4d007;
+}
+
+/* change color of 5th,6th td from all columns */
+td:nth-child(5),
+td:nth-child(6){
+    color: #8f98a0;
+}
+
+td:nth-child(2) {
+    padding: 0;
+}
+
+th:nth-child(2) {
+    color:#8f98a0 ;
+}
+
+ tr td img {
+    width: 113px;
+    height: 40px;
+    display: block;
+}
+
+#preview-card {
+    position: fixed;
+    width: 300px;
+    background-color: #16202d;
+    border: 1px solid #2a475e;
+    padding: 10px;
+    display: none;
+    z-index: 100;
+    pointer-events: none;
+    border-radius: 8px; 
+}
+
+#preview-video {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+#preview-title {
+    color: white;
+    margin: 5px 0;
+}
+
+#platforms {
+    margin-bottom: 5px;
+}
+
+#developer,
+#release {
+    font-size: 13px;
+    color: #8f98a0;
+}
+
+#tags {
+    margin-top: 8px;
+}
+
+.tags {
+    display: inline-block;
+    background-color: #2a475e;
+    color: #c7d5e0;
+    padding: 3px 6px;
+    margin: 2px;
+    font-size: 12px;
+    border-radius: 4px;
+}
