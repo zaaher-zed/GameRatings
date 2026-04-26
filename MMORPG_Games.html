@@ -45,42 +45,38 @@
             <th data-dt-column="0">Rank</th>
             <th data-dt-column="1">Logo</th>
             <th data-dt-column="2">Game</th>
-            <th data-dt-column="3">current</th>
-            <th data-dt-column="4">Peak</th>
-            <th data-dt-column="5">All time peak</th>
+            <th data-dt-column="3">Online</th>
+            <th data-dt-column="4">Stability</th>
+            <th data-dt-column="5">Engagment</th>
         </tr>
-        <tr>
+        <tr class="game-row"
+            data-video="videos/wow.mp4"
+            data-title="World Of Warcraft"
+            data-dev="Blizzard"
+            data-release="2005"
+            data-tags="MMORPG,Free To Play,Open World,PVP,PVE,Guild Wars"
+            data-platforms="PC">
             <td>1.</td>
-            <td><img src="Logos/League-of-Legends-Logo-2009-2019.png" alt="League Of Legends"></td>
-            <td>League Of Legends</td>
-            <td>115,450,200</td>
-            <td>120,400,200</td>
-            <td>200,200,134</td>
-        </tr><tr>
-            <td>2.</td>
-            <td><img src="Logos/counter-strike-2-pc-game-steam-cover.jpg" alt="Counter Strike2"></td>
-            <td>Counter Strike2</td>
-            <td>115,450,200</td>
-            <td>120,400,200</td>
-            <td>200,200,134</td>
-        </tr><tr>
-            <td>3.</td>
-            <td><img src="Logos/Minecraft-Emblem.jpg" alt="MineCraft"></td>
-            <td>MineCraft</td>
-            <td>115,450,200</td>
-            <td>120,400,200</td>
-            <td>200,200,134</td>
-        </tr><tr>
-            <td>4.</td>
-            <td><img src="Logos/b14a87c76b803252f4fea5208114be9417f61f59.png" alt="Albion Online"></td>
-            <td>Albion Online</td>
-            <td>115,450,200</td>
-            <td>120,400,200</td>
-            <td>200,200,134</td>
+            <td><img src="Logos/wow.png" alt="World Of Warcraft"></td>
+            <td><a href="https://worldofwarcraft.blizzard.com/en-us/" target="_blank">World Of Warcraft</a></td>
+            <td>1.2m-1.5m</td>
+            <td>High</td>
+            <td>Very High</td>
         </tr>
+
     </table>
    </section>
-   
+   <div id="preview-card">
+
+    <!-- if video not work add playsinline -->
+        <video id="preview-video" muted loop> </video>
+        <h3 id="preview-title"></h3>
+        <div id="platforms"></div>
+        <p id="developer"></p>
+        <p id="release"></p>
+        <div id="tags"></div>
+    
+   </div>
     <script src="script.js"></script>
 </body>
 </html>
