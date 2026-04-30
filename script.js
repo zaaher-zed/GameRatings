@@ -6,7 +6,6 @@ const dev = document.getElementById("developer");
 const release = document.getElementById("release");
 const tags = document.getElementById("tags");
 const platforms = document.getElementById("platforms");
-
 const rows = document.querySelectorAll(".game-row");
 
 // 🧠 تخزين آخر فيديو لتجنب إعادة التحميل
@@ -95,4 +94,21 @@ rows.forEach(row => {
     card.style.display = "none";
     video.pause();
   });
+});
+// new cards
+
+document.querySelectorAll(".game-card").forEach(card => {
+
+    // TAGS
+    const tags = card.dataset.tags.split(",");
+
+    const tagsContainer = card.querySelector(".tags");
+    tagsContainer.innerHTML = "";
+
+    tags.forEach(tag => {
+        const span = document.createElement("span");
+        span.textContent = tag.trim();
+        tagsContainer.appendChild(span);
+    });
+
 });
