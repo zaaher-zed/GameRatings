@@ -4,9 +4,203 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="mystyle.css">
 </head>
 <body>
+    <header>
+    <ul>
+        <li><a href="index.html">home</a></li>
+        <li><a href="Online_Games.html" class="active">online</a></li>
+        <li><a href="MMORPG_Games.html">MMORPG</a></li>
+        <li><a href="Strategy_Games.html">strategy</a></li>
+        <li><a href="SinglePlayer_Games.html">Single Player</a></li>
+        <li><a href="About_us.html">about us</a></li>
+    </ul>
+    <p class="clear"></p>
+   </header>
+   <section>
+    <h1>online games</h1>
+    <p>Enter the world of real competition here you
+       will find the most active online games, 
+       where millions of players compete every day in vast worlds.
+       and endless experiences.</p> 
+     <p> Choose your next game based on real data, not just expectations</p>
+   </section>
+   <!-- <hr> -->
+   <section class="game-table">
+    <table>
+        <caption>Most Played Games</caption>
+        <colgroup>
+            <col data-dt-column="0" style="width: 3.5%;">
+            <col data-dt-column="1" style="width: 5%;">
+            <col data-dt-column="2" style="width: 17%;">
+            <col data-dt-column="3" style="width: 5%;">
+            <col data-dt-column="4" style="width: 5%;">
+            <col data-dt-column="5" style="width: 5%;">
+        </colgroup>
+        <tr>
+            <th data-dt-column="0">Rank</th>
+            <th data-dt-column="1">Logo</th>
+            <th data-dt-column="2">Game</th>
+            <th data-dt-column="3">current</th>
+            <th data-dt-column="4">Peak</th>
+            <th data-dt-column="5">All time peak</th>
+        </tr>
+        <tr class="game-row"
+            data-video="videos/lol.mp4"
+            data-title="League Of Legends"
+            data-dev="Riot Games"
+            data-release="2009"
+            data-tags="MOBA,Free To Play,Smarts Only,eSports,Strategy"
+            data-platforms="PC">
+            <td>1.</td>
+            <td><img src="Logos/League-of-Legends-Logo-2009-2019.png" alt="League Of Legends"></td>
+            <td><a href="https://www.leagueoflegends.com/en-gb/" target="_blank">League Of Legends</a></td>
+            <td>1,400,356</td>
+            <td>1,554,260</td>
+            <td>2,000,000</td>
+        </tr>
+        <tr class="game-row"
+            data-video="videos/cs2.mp4"
+            data-title="Counter Strike2"
+            data-dev="Valve"
+            data-release="2012"
+            data-tags="Shooter,Free To Play,action"
+            data-platforms="PC">
+            <td>2.</td>
+            <td><img src="Logos/counter-strike-2-pc-game-steam-cover.jpg" alt="Counter Strike2"></td>
+            <td><a href="https://www.counter-strike.net/cs2" target="_blank">Counter Strike2</a></td>
+            <td>1,306,589</td>
+            <td>1,556,363</td>
+            <td>1,962,531</td>
+        </tr>
+        <tr class="game-row"
+            data-video="videos/Valo.mp4"
+            data-title="Valorant"
+            data-dev="Riot Games"
+            data-release="2020"
+            data-tags="Shooter,Free To Play,action"
+            data-platforms="PC">
+            <td>3.</td>
+            <td><img src="Logos/Valo.png" alt="Valorant"></td>
+            <td><a href="https://playvalorant.com/en-gb/" target="_blank">Valorant</a></td>
+            <td>1,045,200</td>
+            <td>1,510,000</td>
+            <td>2,000,000</td>
+        </tr>
+        <tr class="game-row"
+            data-video="videos/Dota2.mp4"
+            data-title="Dota2"
+            data-dev="Valve"
+            data-release="2013"
+            data-tags="Shooter,Free To Play,Smarts Only,eSports,Strategy"
+            data-platforms="PC">
+            <td>4.</td>
+            <td><img src="Logos/Dota2.png" alt="Dota2"></td>
+            <td><a href="https://store.steampowered.com/app/570/Dota_2/" target="_blank">Dota2</a></td>
+            <td>635,262</td>
+            <td>700,000</td>
+            <td>1,300,114</td>
+        </tr>
+        <tr class="game-row"
+            data-video="videos/GTA.mp4"
+            data-title="GTA Online"
+            data-dev="Rockstar Games"
+            data-release="2015"
+            data-tags="Shooter,30$,action"
+            data-platforms="PC,ps">
+            <td>5.</td>
+            <td><img src="Logos/GTA.png" alt="GTA Online"></td>
+            <td><a href="google.com" target="_blank">GTA Online</a></td>
+            <td>300,126</td>
+            <td>823,000</td>
+            <td>1000,000</td>
+        </tr>
+        <tr class="game-row"
+            data-video="videos/Apex.mp4"
+            data-title="Apex Legends"
+            data-dev="Respawn"
+            data-release="2020"
+            data-tags="Shooter,Free To Play,action,Battle Royale"
+            data-platforms="PC">
+            <td>6.</td>
+            <td><img src="Logos/Apex.png" alt="Apex Legends"></td>
+            <td><a href="https://store.steampowered.com/app/1172470/Apex_Legends/" target="_blank">Apex Legends</a></td>
+            <td>250,432</td>
+            <td>600,000</td>
+            <td>630,987</td>
+        </tr>
+        <tr class="game-row"
+            data-video="videos/Rust.mp4"
+            data-title="Rust"
+            data-dev="Facepunch Studios"
+            data-release="2018"
+            data-tags="Survival,18.99$,Crafting,Open World"
+            data-platforms="PC">
+            <td>7.</td>
+            <td><img src="Logos/Rust.png" alt="Rust"></td>
+            <td><a href="https://rust.facepunch.com/" target="_blank">Rust</a></td>
+            <td>140,644</td>
+            <td>154,058</td>
+            <td>262,284</td>
+        </tr>
+        <tr class="game-row"
+            data-video="videos/Crimson.mp4"
+            data-title="Crimson Desert"
+            data-dev="Pearl Abyss"
+            data-release="2026"
+            data-tags="Open World,69.99$,Action,Adventure"
+            data-platforms="PC,ps">
+            <td>8.</td>
+            <td><img src="Logos/Crimson.png" alt="Crimson Desert"></td>
+            <td><a href="https://crimsondesert.pearlabyss.com/en-US/Main" target="_blank">Crimson Desert</a></td>
+            <td>124,667</td>
+            <td>134,225</td>
+            <td>276,261</td>
+        </tr>
+        <tr class="game-row"
+            data-video="videos/Rivals.mp4"
+            data-title="Marvel Rivals"
+            data-dev="NetEase Games"
+            data-release="2024"
+            data-tags="Hero Shooter,Free To Play,action"
+            data-platforms="PC">
+            <td>9.</td>
+            <td><img src="Logos/Rivals.png" alt="Marvel Rivals"></td>
+            <td><a href="https://www.marvelrivals.com/" target="_blank">Marvel Rivals</a></td>
+            <td>109,123</td>
+            <td>136,109</td>
+            <td>644,269</td>
+        </tr>
+        <tr class="game-row"
+            data-video="videos/Albion.mp4"
+            data-title="Albion Online"
+            data-dev="Sandbox Interactive GmbH"
+            data-release="2018"
+            data-tags="Sand Box,Free To Play,Open World,Crafting,Plant,Griding,Smarts Only"
+            data-platforms="PC">
+            <td>10.</td>
+            <td><img src="Logos/Albion.png" alt="Albion Online"></td>
+            <td><a href="https://albiononline.com/home" target="_blank">Albion Online</a></td>
+            <td>100,233</td>
+            <td>148,453</td>
+            <td>527,234</td>
+        </tr>
+    </table>
+   </section>
+   
+   <div id="preview-card">
+
+    <!-- if video not work add playsinline -->
+        <video id="preview-video" muted loop> </video>
+        <h3 id="preview-title"></h3>
+        <div id="platforms"></div>
+        <p id="developer"></p>
+        <p id="release"></p>
+        <div id="tags"></div>
     
+   </div>
+   
     <script src="script.js"></script>
 </body>
 </html>
