@@ -1,34 +1,50 @@
+ * {
+    box-sizing: border-box;
+}
  body {
     margin: 0;
+    padding: 0;
+    width: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #1b2838;
     color: white;
+    overflow-x: hidden;
     
     
 }
-
+/* header and logo  */
 header {
     position: relative;
+    display: flex;
+    align-items: center;
     background-color: #171a21;
-    padding:1rem;
-    height: 5vh;
+    width: 100%;
+    padding:0 10px;
+    height: 70px;
     
+}
+.logo {
+    width: 120px;
+    height: auto;
+    display: block;
 }
 
 header ul {
+    position: absolute;
     padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1px;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 25px;
     list-style: none;
     margin: 0;
     
 }
 
 header ul li {
-    float: none;
-    padding: 1% 1%;
+    display: flex;
+    padding: 0;
+    margin: 0;
     font-size: 20px;
     text-transform: capitalize;
    
@@ -53,7 +69,7 @@ a {
 a:hover {
     border-bottom: 1px white solid;
 }
-
+/* all sections and section headers */
 section {
     margin: 1vh auto;
     padding: 20px;
@@ -65,12 +81,14 @@ section h1{
     text-transform: capitalize;
 }
 
+/* make text blue when its active or hovered */
  header ul li a:hover,header ul li a.active {
     color: #66c0f4;
     border-bottom: 2px #66c0f4 solid;
     
     
 }
+/* table */
 .game-table {
     width: 70%;
     margin: auto;
@@ -84,6 +102,7 @@ table {
     border-collapse: collapse;
 
 }
+/* header of table */
 caption {
     font-weight: bold;
     padding-bottom: 5px;
@@ -101,7 +120,7 @@ td {
     text-align: left;
     border-bottom: #2a475e solid 1px;
 }
-
+/* make all rows color lighter while hover is active */
 tr:hover {
     background-color:#1f2f42;
     transition: 0.2s;
@@ -138,6 +157,7 @@ tr:nth-child(4) td:nth-child(3) a {
     color: #cd7f32;
 }
 
+/* rows animation  */
 @keyframes fadeup {
     from {
         opacity: 0;
@@ -185,13 +205,14 @@ tr:nth-child(4) td:nth-child(3) a {
     animation-delay: 1s;
 }
 
-
+/* logo if games in table */
  tr td img {
     width: 113px;
     height: 40px;
     display: block;
 }
 
+/* game details after hover in table */
 #preview-card {
     position: fixed;
     width: 300px;
@@ -256,15 +277,14 @@ tr:nth-child(4) td:nth-child(3) a {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover;   
     z-index: -1;
 }
 
 .bg-contant {
     position: relative;
     z-index: 1;
-    height: 100%;
-    
+    height: 100%; 
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -278,9 +298,12 @@ h2 {
 .games-preview {
     position: relative;
     display: flex;
-    gap: 20px;
+    gap: 15px;
     flex-wrap: wrap;
     justify-content: center;
+    max-width: 1600px;
+    margin: auto;
+    
 }
 
 .game-card {
@@ -367,4 +390,164 @@ h2 {
 .game-card:hover .tags,
 .game-card:hover .desc {
     opacity: 1;
+}
+
+/* scroll botton */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(102, 192, 244, 0.15);
+    color: #66c0f4;
+
+    font-size: 20px;
+    cursor: pointer;
+
+    backdrop-filter: blur(6px);
+    transition: 0.3s;
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+#scrollTopBtn:hover {
+    background: #66c0f4;
+    color: #0b141f;
+    transform: scale(1.1);
+}
+
+
+#scrollTopBtn.show {
+    opacity: 1 ;
+    pointer-events: auto;
+}
+
+
+/* ===== About Section ===== */
+.about-section {
+    position: relative;
+    height: 85vh;
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Cards container */
+.about-details {
+    position: relative;
+    z-index: 1;
+
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.profile-card {
+    background: rgba(15, 23, 32, 0.5);
+    border: 1px solid rgba(102, 192, 244, 0.25);
+
+    padding: 25px 30px;
+    width: 320px;
+
+    border-radius: 14px;
+
+    color: #e5e5e5;
+    text-align: left;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow: 0 12px 40px rgba(0,0,0,0.65);
+
+    transition: 0.3s ease;
+}
+
+
+.profile-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 18px 60px rgba(0,0,0,0.8);
+}
+
+
+.profile-card h2 {
+    text-align: center;
+    color: #66c0f4;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+}
+
+
+.profile-card p {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #c7d5e0;
+}
+
+.profile-card span {
+    color: #8f98a0;
+    font-weight: bold;
+}
+
+
+.profile-card a {
+    color: #66c0f4;
+    text-decoration: none;
+    
+}
+
+.profile-card a:hover {
+    text-decoration: underline;
+}
+.cards-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+/* footer */
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+    padding: 15px;
+    background-color: #171a21;
+    font-size: 14px;
+
+    border-top: 1px solid #2a475e;
+
+    box-sizing: border-box;
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+footer a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+footer a img {
+    width: 24px;
+    height: auto;
+    
+    transition: 0.3s;
+    
+}
+
+footer a img:hover {
+    transform: scale(1.1);
 }
