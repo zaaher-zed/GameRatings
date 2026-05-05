@@ -26,7 +26,6 @@ document.addEventListener("mousemove", (e) => {
 });
 
 setInterval(() => {
-
   if (!card) return;
 
   const offset = 20;
@@ -47,17 +46,14 @@ setInterval(() => {
 
   card.style.left = x + "px";
   card.style.top = y + "px";
-
 }, 16);
 
 // =====================
 // 🎮 Table hover cards
 // =====================
 
-rows.forEach(row => {
-
+rows.forEach((row) => {
   row.addEventListener("mouseenter", () => {
-
     if (!card) return;
 
     card.style.display = "block";
@@ -82,7 +78,7 @@ rows.forEach(row => {
     tags.innerHTML = "";
 
     if (tagsData) {
-      tagsData.split(",").forEach(tag => {
+      tagsData.split(",").forEach((tag) => {
         if (!tag) return;
 
         const span = document.createElement("span");
@@ -113,8 +109,7 @@ rows.forEach(row => {
 // 🖼️ Game cards tags system
 // =====================
 
-gameCards.forEach(card => {
-
+gameCards.forEach((card) => {
   const tagsData = card.dataset.tags;
 
   if (!tagsData) return;
@@ -124,8 +119,7 @@ gameCards.forEach(card => {
 
   tagsContainer.innerHTML = "";
 
-  tagsData.split(",").forEach(tag => {
-
+  tagsData.split(",").forEach((tag) => {
     if (!tag) return;
 
     const span = document.createElement("span");
@@ -133,7 +127,6 @@ gameCards.forEach(card => {
 
     tagsContainer.appendChild(span);
   });
-
 });
 
 // =====================
@@ -141,7 +134,6 @@ gameCards.forEach(card => {
 // =====================
 
 if (btn) {
-
   window.addEventListener("scroll", () => {
     if (window.scrollY > 200) {
       btn.style.opacity = "1";
@@ -155,7 +147,7 @@ if (btn) {
   btn.addEventListener("click", () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   });
 }

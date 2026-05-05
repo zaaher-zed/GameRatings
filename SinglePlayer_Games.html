@@ -1,214 +1,308 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="logo.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="logo.png" />
     <title>GameRatings</title>
-    <link rel="stylesheet" href="mystyle.css">
-</head>
-<body>
+    <link rel="stylesheet" href="mystyle.css" />
+  </head>
+  <body>
     <header>
-        <img src="logo.png" class="logo">
+      <img src="logo.png" class="logo" />
 
-    <ul>
+      <ul>
         <li><a href="index.html">home</a></li>
         <li><a href="Online_Games.html">online</a></li>
         <li><a href="MMORPG_Games.html">MMORPG</a></li>
         <li><a href="Strategy_Games.html">strategy</a></li>
-        <li><a href="SinglePlayer_Games.html" class="active">Single Player</a></li>
+        <li>
+          <a href="SinglePlayer_Games.html" class="active">Single Player</a>
+        </li>
         <li><a href="About_us.html">about us</a></li>
-    </ul>
-    <p class="clear"></p>
-   </header>
+      </ul>
+      <p class="clear"></p>
+    </header>
 
-   <section>
-    <h1>Single Player Games</h1>
-    <p>Dive into immersive single-player experiences where story, emotion, and 
-       gameplay come together to create unforgettable journeys.</p>
-    <p>Explore carefully crafted worlds filled with cinematic storytelling, 
-       action, and adventures designed for a solo experience.</p>
-   </section>
+    <section>
+      <h1>Single Player Games</h1>
+      <p>
+        Dive into immersive single-player experiences where story, emotion, and
+        gameplay come together to create unforgettable journeys.
+      </p>
+      <p>
+        Explore carefully crafted worlds filled with cinematic storytelling,
+        action, and adventures designed for a solo experience.
+      </p>
+    </section>
 
-   <!-- <hr> -->
-   
-   <section class="game-table">
-    <table>
-        <caption>Most Played Games</caption>
+    <!-- <hr> -->
+
+    <section class="game-table">
+      <table>
+        <caption>
+          Most Played Games
+        </caption>
         <colgroup>
-            <col data-dt-column="0" style="width: 3.5%;">
-            <col data-dt-column="1" style="width: 5%;">
-            <col data-dt-column="2" style="width: 17%;">
-            <col data-dt-column="3" style="width: 5%;">
-            <col data-dt-column="4" style="width: 5%;">
-            <col data-dt-column="5" style="width: 5%;">
+          <col data-dt-column="0" style="width: 3.5%" />
+          <col data-dt-column="1" style="width: 5%" />
+          <col data-dt-column="2" style="width: 17%" />
+          <col data-dt-column="3" style="width: 5%" />
+          <col data-dt-column="4" style="width: 5%" />
+          <col data-dt-column="5" style="width: 5%" />
         </colgroup>
         <tr>
-            <th data-dt-column="0">Rank</th>
-            <th data-dt-column="1">Logo</th>
-            <th data-dt-column="2">Game</th>
-            <th data-dt-column="3">Sales</th>
-            <th data-dt-column="4">Rating</th>
-            <th data-dt-column="5">Replayability</th>
+          <th data-dt-column="0">Rank</th>
+          <th data-dt-column="1">Logo</th>
+          <th data-dt-column="2">Game</th>
+          <th data-dt-column="3">Sales</th>
+          <th data-dt-column="4">Rating</th>
+          <th data-dt-column="5">Replayability</th>
         </tr>
-        <tr class="game-row"
-            data-video="videos/red.mp4"
-            data-title="Red Dead Redemption 2"
-            data-dev="Rockstar Games"
-            data-release="2018"
-            data-tags="Open World,$59.99,Action,Story,Adventure"
-            data-platforms="PC,ps">
-            <td>1.</td>
-            <td><img src="Logos/red.png" alt="Red Dead Redemption 2"></td>
-            <td><a href="https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/?curator_clanid=4777282" target="_blank">Red Dead Redemption 2</a></td>
-            <td>+60M</td>
-            <td class="stabiliry">⭐⭐⭐⭐⭐</td>
-            <td class="Engagment">⭐⭐⭐⭐</td>
+        <tr
+          class="game-row"
+          data-video="videos/red.mp4"
+          data-title="Red Dead Redemption 2"
+          data-dev="Rockstar Games"
+          data-release="2018"
+          data-tags="Open World,$59.99,Action,Story,Adventure"
+          data-platforms="PC,ps"
+        >
+          <td>1.</td>
+          <td><img src="Logos/red.png" alt="Red Dead Redemption 2" /></td>
+          <td>
+            <a
+              href="https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/?curator_clanid=4777282"
+              target="_blank"
+              >Red Dead Redemption 2</a
+            >
+          </td>
+          <td>+60M</td>
+          <td class="stabiliry">⭐⭐⭐⭐⭐</td>
+          <td class="Engagment">⭐⭐⭐⭐</td>
         </tr>
-         <tr class="game-row"
-            data-video="videos/witcher.mp4"
-            data-title="The Witcher 3: Wild Hunt"
-            data-dev="CD Projekt Red"
-            data-release="2015"
-            data-tags="Open World,$39.99,Action,Story,Adventure,RPG"
-            data-platforms="PC,ps">
-            <td>2.</td>
-            <td><img src="Logos/witcher.jpg" alt="The Witcher 3: Wild Hunt"></td>
-            <td><a href="https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/?curator_clanid=4777282" target="_blank">The Witcher 3: Wild Hunt</a></td>
-            <td>+50M</td>
-            <td class="stabiliry">⭐⭐⭐⭐⭐</td>
-            <td class="Engagment">⭐⭐⭐⭐⭐</td>
+        <tr
+          class="game-row"
+          data-video="videos/witcher.mp4"
+          data-title="The Witcher 3: Wild Hunt"
+          data-dev="CD Projekt Red"
+          data-release="2015"
+          data-tags="Open World,$39.99,Action,Story,Adventure,RPG"
+          data-platforms="PC,ps"
+        >
+          <td>2.</td>
+          <td>
+            <img src="Logos/witcher.jpg" alt="The Witcher 3: Wild Hunt" />
+          </td>
+          <td>
+            <a
+              href="https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/?curator_clanid=4777282"
+              target="_blank"
+              >The Witcher 3: Wild Hunt</a
+            >
+          </td>
+          <td>+50M</td>
+          <td class="stabiliry">⭐⭐⭐⭐⭐</td>
+          <td class="Engagment">⭐⭐⭐⭐⭐</td>
         </tr>
-        <tr class="game-row"
-            data-video="videos/spider.mp4"
-            data-title="Marvel’s Spider-Man Remastered"
-            data-dev="Insomniac Games"
-            data-release="2022"
-            data-tags="Open World,$59.99,Action,Story,Adventure"
-            data-platforms="PC,ps">
-            <td>3.</td>
-            <td><img src="Logos/spider.png" alt="Marvel’s Spider-Man Remastered"></td>
-            <td><a href="https://store.steampowered.com/app/1817070/Marvels_SpiderMan_Remastered/?curator_clanid=4777282" target="_blank">Marvel’s Spider-Man Remastered</a></td>
-            <td>+27M</td>
-            <td class="stabiliry">⭐⭐⭐⭐⭐</td>
-            <td class="Engagment">⭐⭐⭐⭐</td>
+        <tr
+          class="game-row"
+          data-video="videos/spider.mp4"
+          data-title="Marvel’s Spider-Man Remastered"
+          data-dev="Insomniac Games"
+          data-release="2022"
+          data-tags="Open World,$59.99,Action,Story,Adventure"
+          data-platforms="PC,ps"
+        >
+          <td>3.</td>
+          <td>
+            <img src="Logos/spider.png" alt="Marvel’s Spider-Man Remastered" />
+          </td>
+          <td>
+            <a
+              href="https://store.steampowered.com/app/1817070/Marvels_SpiderMan_Remastered/?curator_clanid=4777282"
+              target="_blank"
+              >Marvel’s Spider-Man Remastered</a
+            >
+          </td>
+          <td>+27M</td>
+          <td class="stabiliry">⭐⭐⭐⭐⭐</td>
+          <td class="Engagment">⭐⭐⭐⭐</td>
         </tr>
-        <tr class="game-row"
-            data-video="videos/elden.mp4"
-            data-title="Elden Ring"
-            data-dev="FromSoftware"
-            data-release="2022"
-            data-tags="Open World,$59.99,Action,Story,RPG,Souls Like"
-            data-platforms="PC,ps">
-            <td>4.</td>
-            <td><img src="Logos/elden.jpg" alt="Elden Ring"></td>
-            <td><a href="https://store.steampowered.com/app/1245620/ELDEN_RING/" target="_blank">Elden Ring</a></td>
-            <td>+25M</td>
-            <td class="stabiliry">⭐⭐⭐⭐⭐</td>
-            <td class="Engagment">⭐⭐⭐⭐⭐</td>
+        <tr
+          class="game-row"
+          data-video="videos/elden.mp4"
+          data-title="Elden Ring"
+          data-dev="FromSoftware"
+          data-release="2022"
+          data-tags="Open World,$59.99,Action,Story,RPG,Souls Like"
+          data-platforms="PC,ps"
+        >
+          <td>4.</td>
+          <td><img src="Logos/elden.jpg" alt="Elden Ring" /></td>
+          <td>
+            <a
+              href="https://store.steampowered.com/app/1245620/ELDEN_RING/"
+              target="_blank"
+              >Elden Ring</a
+            >
+          </td>
+          <td>+25M</td>
+          <td class="stabiliry">⭐⭐⭐⭐⭐</td>
+          <td class="Engagment">⭐⭐⭐⭐⭐</td>
         </tr>
-        <tr class="game-row"
-            data-video="videos/wukong.mp4"
-            data-title="Black Myth: Wukong"
-            data-dev="Game Science"
-            data-release="2024"
-            data-tags="Pro Plyers Only,$59.99,Action,Story,RPG,Souls Like"
-            data-platforms="PC,ps">
-            <td>5.</td>
-            <td><img src="Logos/wukong.jpg" alt="Black Myth: Wukong"></td>
-            <td><a href="https://store.steampowered.com/app/2358720/Black_Myth_Wukong/?curator_clanid=4777282" target="_blank">Black Myth: Wukong</a></td>
-            <td>+20M</td>
-            <td class="stabiliry">⭐⭐⭐⭐⭐</td>
-            <td class="Engagment">⭐⭐⭐⭐</td>
+        <tr
+          class="game-row"
+          data-video="videos/wukong.mp4"
+          data-title="Black Myth: Wukong"
+          data-dev="Game Science"
+          data-release="2024"
+          data-tags="Pro Plyers Only,$59.99,Action,Story,RPG,Souls Like"
+          data-platforms="PC,ps"
+        >
+          <td>5.</td>
+          <td><img src="Logos/wukong.jpg" alt="Black Myth: Wukong" /></td>
+          <td>
+            <a
+              href="https://store.steampowered.com/app/2358720/Black_Myth_Wukong/?curator_clanid=4777282"
+              target="_blank"
+              >Black Myth: Wukong</a
+            >
+          </td>
+          <td>+20M</td>
+          <td class="stabiliry">⭐⭐⭐⭐⭐</td>
+          <td class="Engagment">⭐⭐⭐⭐</td>
         </tr>
-        <tr class="game-row"
-            data-video="videos/valhalla.mp4"
-            data-title="Assassin's Creed Valhalla"
-            data-dev="Ubisoft"
-            data-release="2020"
-            data-tags="Open World,$59.99,Action,Story,RPG,Historical"
-            data-platforms="PC,ps">
-            <td>6.</td>
-            <td><img src="Logos/valhalla.jpg" alt="Assassin's Creed Valhalla"></td>
-            <td><a href="https://store.steampowered.com/app/2208920/Assassins_Creed_Valhalla/?curator_clanid=4777282" target="_blank">Assassin's Creed Valhalla</a></td>
-            <td>+20M</td>
-            <td class="stabiliry">⭐⭐⭐⭐</td>
-            <td class="Engagment">⭐⭐⭐</td>
+        <tr
+          class="game-row"
+          data-video="videos/valhalla.mp4"
+          data-title="Assassin's Creed Valhalla"
+          data-dev="Ubisoft"
+          data-release="2020"
+          data-tags="Open World,$59.99,Action,Story,RPG,Historical"
+          data-platforms="PC,ps"
+        >
+          <td>6.</td>
+          <td>
+            <img src="Logos/valhalla.jpg" alt="Assassin's Creed Valhalla" />
+          </td>
+          <td>
+            <a
+              href="https://store.steampowered.com/app/2208920/Assassins_Creed_Valhalla/?curator_clanid=4777282"
+              target="_blank"
+              >Assassin's Creed Valhalla</a
+            >
+          </td>
+          <td>+20M</td>
+          <td class="stabiliry">⭐⭐⭐⭐</td>
+          <td class="Engagment">⭐⭐⭐</td>
         </tr>
-        <tr class="game-row"
-            data-video="videos/wars.mp4"
-            data-title="Star Wars Jedi: Survivor"
-            data-dev="espawn Entertainment"
-            data-release="2023"
-            data-tags="Open World,$69.99,Action,Story,Sci-Fi"
-            data-platforms="PC,ps">
-            <td>7.</td>
-            <td><img src="Logos/wars.jpg" alt="Star Wars Jedi: Survivor"></td>
-            <td><a href="https://store.steampowered.com/app/1774580/STAR_WARS_Jedi_Survivor/?curator_clanid=4777282" target="_blank">Star Wars Jedi: Survivor</a></td>
-            <td>+15M</td>
-            <td class="stabiliry">⭐⭐⭐⭐</td>
-            <td class="Engagment">⭐⭐⭐</td>
+        <tr
+          class="game-row"
+          data-video="videos/wars.mp4"
+          data-title="Star Wars Jedi: Survivor"
+          data-dev="espawn Entertainment"
+          data-release="2023"
+          data-tags="Open World,$69.99,Action,Story,Sci-Fi"
+          data-platforms="PC,ps"
+        >
+          <td>7.</td>
+          <td><img src="Logos/wars.jpg" alt="Star Wars Jedi: Survivor" /></td>
+          <td>
+            <a
+              href="https://store.steampowered.com/app/1774580/STAR_WARS_Jedi_Survivor/?curator_clanid=4777282"
+              target="_blank"
+              >Star Wars Jedi: Survivor</a
+            >
+          </td>
+          <td>+15M</td>
+          <td class="stabiliry">⭐⭐⭐⭐</td>
+          <td class="Engagment">⭐⭐⭐</td>
         </tr>
-        <tr class="game-row"
-            data-video="videos/ghost.mp4"
-            data-title="Ghost of Tsushima"
-            data-dev="Sucker Punch Productions"
-            data-release="2020"
-            data-tags="Open World,$59.99,Action,Story,Samurai,Adventure"
-            data-platforms="PC,ps">
-            <td>8.</td>
-            <td><img src="Logos/ghost.jpg" alt="Ghost of Tsushima"></td>
-            <td><a href="https://store.steampowered.com/app/2215430/Ghost_of_Tsushima_DIRECTORS_CUT/?curator_clanid=4777282" target="_blank">Ghost of Tsushima</a></td>
-            <td>+10M</td>
-            <td class="stabiliry">⭐⭐⭐⭐⭐</td>
-            <td class="Engagment">⭐⭐⭐⭐</td>
+        <tr
+          class="game-row"
+          data-video="videos/ghost.mp4"
+          data-title="Ghost of Tsushima"
+          data-dev="Sucker Punch Productions"
+          data-release="2020"
+          data-tags="Open World,$59.99,Action,Story,Samurai,Adventure"
+          data-platforms="PC,ps"
+        >
+          <td>8.</td>
+          <td><img src="Logos/ghost.jpg" alt="Ghost of Tsushima" /></td>
+          <td>
+            <a
+              href="https://store.steampowered.com/app/2215430/Ghost_of_Tsushima_DIRECTORS_CUT/?curator_clanid=4777282"
+              target="_blank"
+              >Ghost of Tsushima</a
+            >
+          </td>
+          <td>+10M</td>
+          <td class="stabiliry">⭐⭐⭐⭐⭐</td>
+          <td class="Engagment">⭐⭐⭐⭐</td>
         </tr>
-        <tr class="game-row"
-            data-video="videos/sekiro.mp4"
-            data-title="Sekiro: Shadows Die Twice"
-            data-dev="FromSoftware"
-            data-release="2019"
-            data-tags="Open World,$59.99,Action,Ninja,Souls Like,Stealth"
-            data-platforms="PC,ps">
-            <td>9.</td>
-            <td><img src="Logos/sekiro.jpg" alt="Sekiro: Shadows Die Twice"></td>
-            <td><a href="https://store.steampowered.com/app/814380/Sekiro_Shadows_Die_Twice__GOTY_Edition/?curator_clanid=4777282" target="_blank">Sekiro: Shadows Die Twice</a></td>
-            <td>+10M</td>
-            <td class="stabiliry">⭐⭐⭐⭐⭐</td>
-            <td class="Engagment">⭐⭐⭐⭐</td>
+        <tr
+          class="game-row"
+          data-video="videos/sekiro.mp4"
+          data-title="Sekiro: Shadows Die Twice"
+          data-dev="FromSoftware"
+          data-release="2019"
+          data-tags="Open World,$59.99,Action,Ninja,Souls Like,Stealth"
+          data-platforms="PC,ps"
+        >
+          <td>9.</td>
+          <td>
+            <img src="Logos/sekiro.jpg" alt="Sekiro: Shadows Die Twice" />
+          </td>
+          <td>
+            <a
+              href="https://store.steampowered.com/app/814380/Sekiro_Shadows_Die_Twice__GOTY_Edition/?curator_clanid=4777282"
+              target="_blank"
+              >Sekiro: Shadows Die Twice</a
+            >
+          </td>
+          <td>+10M</td>
+          <td class="stabiliry">⭐⭐⭐⭐⭐</td>
+          <td class="Engagment">⭐⭐⭐⭐</td>
         </tr>
-        <tr class="game-row"
-            data-video="videos/horizon.mp4"
-            data-title="Horizon Forbidden West"
-            data-dev="Guerrilla Games"
-            data-release="2022"
-            data-tags="Open World,$59.99,Action,Sci-Fi,Adventure"
-            data-platforms="PC,ps">
-            <td>10.</td>
-            <td><img src="Logos/horizon.jpg" alt="Horizon Forbidden West"></td>
-            <td><a href="https://store.steampowered.com/app/2420110/Horizon_Forbidden_West_Complete_Edition/?curator_clanid=4777282" target="_blank">Horizon Forbidden West</a></td>
-            <td>+8M</td>
-            <td class="stabiliry">⭐⭐⭐⭐</td>
-            <td class="Engagment">⭐⭐⭐⭐</td>
+        <tr
+          class="game-row"
+          data-video="videos/horizon.mp4"
+          data-title="Horizon Forbidden West"
+          data-dev="Guerrilla Games"
+          data-release="2022"
+          data-tags="Open World,$59.99,Action,Sci-Fi,Adventure"
+          data-platforms="PC,ps"
+        >
+          <td>10.</td>
+          <td><img src="Logos/horizon.jpg" alt="Horizon Forbidden West" /></td>
+          <td>
+            <a
+              href="https://store.steampowered.com/app/2420110/Horizon_Forbidden_West_Complete_Edition/?curator_clanid=4777282"
+              target="_blank"
+              >Horizon Forbidden West</a
+            >
+          </td>
+          <td>+8M</td>
+          <td class="stabiliry">⭐⭐⭐⭐</td>
+          <td class="Engagment">⭐⭐⭐⭐</td>
         </tr>
-    </table>
-   </section>
-   <div id="preview-card">
+      </table>
+    </section>
+    <div id="preview-card">
+      <!-- if video not work add playsinline -->
+      <video id="preview-video" muted loop></video>
+      <h3 id="preview-title"></h3>
+      <div id="platforms"></div>
+      <p id="developer"></p>
+      <p id="release"></p>
+      <div id="tags"></div>
+    </div>
 
-    <!-- if video not work add playsinline -->
-        <video id="preview-video" muted loop> </video>
-        <h3 id="preview-title"></h3>
-        <div id="platforms"></div>
-        <p id="developer"></p>
-        <p id="release"></p>
-        <div id="tags"></div>
-    
-   </div>
-   
-   <footer>
-    <p>for more info about our site you can visit our GitHub:</p>
-    <a href="#"><img src="Logos/github.png" alt="GitHub"></a>
-   </footer>
+    <footer>
+      <p>for more info about our site you can visit our GitHub:</p>
+      <a href="#"><img src="Logos/github.png" alt="GitHub" /></a>
+    </footer>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
