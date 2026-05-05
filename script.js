@@ -6,23 +6,29 @@ const dev = document.getElementById("developer");
 const release = document.getElementById("release");
 const tags = document.getElementById("tags");
 const platforms = document.getElementById("platforms");
-const rows = document.querySelectorAll(".game-row");
 
-// 🧠 تخزين آخر فيديو لتجنب إعادة التحميل
+const rows = document.querySelectorAll(".game-row");
+const gameCards = document.querySelectorAll(".game-card");
+const btn = document.getElementById("scrollTopBtn");
+
+// =====================
+// 🧠 Hover preview system
+// =====================
+
 let currentVideo = "";
 
-// 🧠 لتقليل استهلاك mousemove
 let mouseX = 0;
 let mouseY = 0;
 
-// تحسين: فصل تحديث الموقع عن الحدث
 document.addEventListener("mousemove", (e) => {
   mouseX = e.pageX;
   mouseY = e.pageY;
 });
 
-// تحديث الموقع 60 مرة في الثانية بدل مئات
 setInterval(() => {
+
+  if (!card) return;
+
   const offset = 20;
 
   const cardWidth = card.offsetWidth;
@@ -31,12 +37,10 @@ setInterval(() => {
   let x = mouseX + offset;
   let y = mouseY + offset;
 
-  // 🧠 لو اقترب من يمين الشاشة
   if (x + cardWidth > window.innerWidth) {
     x = mouseX - cardWidth - offset;
   }
 
-  // 🧠 لو اقترب من أسفل الشاشة
   if (y + cardHeight > window.innerHeight) {
     y = mouseY - cardHeight - offset;
   }
@@ -46,69 +50,112 @@ setInterval(() => {
 
 }, 16);
 
+// =====================
+// 🎮 Table hover cards
+// =====================
+
 rows.forEach(row => {
 
   row.addEventListener("mouseenter", () => {
+
+    if (!card) return;
+
     card.style.display = "block";
 
-    // ✅ لا تعيد تحميل نفس الفيديو
-    if (currentVideo !== row.dataset.video) {
-      currentVideo = row.dataset.video;
-      video.src = currentVideo;
+    const videoSrc = row.dataset.video;
+
+    if (videoSrc && currentVideo !== videoSrc) {
+      currentVideo = videoSrc;
+      video.src = videoSrc;
       video.load();
     }
 
-    video.play().catch(() => {}); // منع أخطاء المتصفح
+    video.play().catch(() => {});
 
-    title.textContent = row.dataset.title;
-    dev.textContent = "Developer: " + row.dataset.dev;
-    release.textContent = "Release: " + row.dataset.release;
+    title.textContent = row.dataset.title || "";
+    dev.textContent = "Developer: " + (row.dataset.dev || "");
+    release.textContent = "Release: " + (row.dataset.release || "");
 
-    // ✅ تقليل عمليات DOM (باستخدام Fragment)
-    const fragment = document.createDocumentFragment();
+    // TAGS
+    const tagsData = row.dataset.tags;
+
     tags.innerHTML = "";
 
-    row.dataset.tags.split(",").forEach(tag => {
-      const span = document.createElement("span");
-      span.className = "tag";
-      span.textContent = tag;
-      fragment.appendChild(span);
-    });
+    if (tagsData) {
+      tagsData.split(",").forEach(tag => {
+        if (!tag) return;
 
-    tags.appendChild(fragment);
+        const span = document.createElement("span");
+        span.className = "tag";
+        span.textContent = tag.trim();
+        tags.appendChild(span);
+      });
+    }
 
-    // ✅ تحسين المنصات (بدون innerHTML المتكرر)
+    // PLATFORMS
     let icons = "";
+    const platformData = (row.dataset.platforms || "").toLowerCase();
 
-    if (row.dataset.platforms.toLowerCase().includes("pc")) {
-      icons += "🖥️ ";
-    }
-    if (row.dataset.platforms.toLowerCase().includes("ps")) {
-      icons += "🎮 ";
-    }
+    if (platformData.includes("pc")) icons += "🖥️ ";
+    if (platformData.includes("ps")) icons += "🎮 ";
 
     platforms.textContent = icons;
   });
 
   row.addEventListener("mouseleave", () => {
+    if (!card) return;
     card.style.display = "none";
     video.pause();
   });
 });
-// new cards
 
-document.querySelectorAll(".game-card").forEach(card => {
+// =====================
+// 🖼️ Game cards tags system
+// =====================
 
-    // TAGS
-    const tags = card.dataset.tags.split(",");
+gameCards.forEach(card => {
 
-    const tagsContainer = card.querySelector(".tags");
-    tagsContainer.innerHTML = "";
+  const tagsData = card.dataset.tags;
 
-    tags.forEach(tag => {
-        const span = document.createElement("span");
-        span.textContent = tag.trim();
-        tagsContainer.appendChild(span);
-    });
+  if (!tagsData) return;
+
+  const tagsContainer = card.querySelector(".tags");
+  if (!tagsContainer) return;
+
+  tagsContainer.innerHTML = "";
+
+  tagsData.split(",").forEach(tag => {
+
+    if (!tag) return;
+
+    const span = document.createElement("span");
+    span.textContent = tag.trim();
+
+    tagsContainer.appendChild(span);
+  });
 
 });
+
+// =====================
+// 🔝 Scroll to top button
+// =====================
+
+if (btn) {
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 200) {
+      btn.style.opacity = "1";
+      btn.style.pointerEvents = "auto";
+    } else {
+      btn.style.opacity = "0";
+      btn.style.pointerEvents = "none";
+    }
+  });
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+}
