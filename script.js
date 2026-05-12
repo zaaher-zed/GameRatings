@@ -12,6 +12,36 @@ const gameCards = document.querySelectorAll(".game-card");
 const btn = document.getElementById("scrollTopBtn");
 
 // =====================
+// 🎥 Video settings
+// =====================
+
+if (video) {
+  video.preload = "auto";
+  video.muted = true;
+  video.loop = true;
+  video.playsInline = true;
+}
+
+// =====================
+// 🚀 Preload preview videos
+// =====================
+
+const preloadedVideos = {};
+
+rows.forEach((row) => {
+  const src = row.dataset.video;
+
+  if (src) {
+    const preloadVideo = document.createElement("video");
+
+    preloadVideo.src = src;
+    preloadVideo.preload = "auto";
+
+    preloadedVideos[src] = preloadVideo;
+  }
+});
+
+// =====================
 // 🧠 Hover preview system
 // =====================
 
@@ -26,7 +56,7 @@ document.addEventListener("mousemove", (e) => {
 });
 
 // =====================
-// 🚀 Smooth positioning (requestAnimationFrame)
+// 🚀 Smooth positioning
 // =====================
 
 function updateCardPosition() {
@@ -39,15 +69,23 @@ function updateCardPosition() {
     let x = mouseX + offset;
     let y = mouseY + offset;
 
+    // Right / Left fix
     if (x + cardWidth > window.innerWidth) {
       x = mouseX - cardWidth - offset;
     }
-    if (x < 0) x = offset;
 
+    if (x < 0) {
+      x = offset;
+    }
+
+    // Bottom / Top fix
     if (y + cardHeight > window.innerHeight) {
       y = mouseY - cardHeight - offset;
     }
-    if (y < 0) y = offset;
+
+    if (y < 0) {
+      y = offset;
+    }
 
     card.style.left = x + "px";
     card.style.top = y + "px";
@@ -70,19 +108,36 @@ rows.forEach((row) => {
 
     const videoSrc = row.dataset.video;
 
+    // Change video only if needed
     if (videoSrc && currentVideo !== videoSrc) {
       currentVideo = videoSrc;
+
+      video.pause();
+
       video.src = videoSrc;
-      video.load();
+
+      video.currentTime = 0;
+
+      video.play().catch(() => {});
+    } else {
+      // Replay same video instantly
+      video.currentTime = 0;
+      video.play().catch(() => {});
     }
 
-    video.play().catch(() => {});
-
+    // Title
     title.textContent = row.dataset.title || "";
+
+    // Developer
     dev.textContent = "Developer: " + (row.dataset.dev || "");
+
+    // Release
     release.textContent = "Release: " + (row.dataset.release || "");
 
-    // TAGS
+    // =====================
+    // 🏷️ TAGS
+    // =====================
+
     const tagsData = row.dataset.tags;
 
     tags.innerHTML = "";
@@ -92,25 +147,40 @@ rows.forEach((row) => {
         if (!tag) return;
 
         const span = document.createElement("span");
+
         span.className = "tag";
         span.textContent = tag.trim();
+
         tags.appendChild(span);
       });
     }
 
-    // PLATFORMS
-    let icons = "";
-    const platformData = (row.dataset.platforms || "").toLowerCase();
+    // =====================
+    // 🖥️ Platforms
+    // =====================
 
-    if (platformData.includes("pc")) icons += "🖥️ ";
-    if (platformData.includes("ps")) icons += "🎮 ";
+    let icons = "";
+
+    const platformData = (
+      row.dataset.platforms || ""
+    ).toLowerCase();
+
+    if (platformData.includes("pc")) {
+      icons += "🖥️ ";
+    }
+
+    if (platformData.includes("ps")) {
+      icons += "🎮 ";
+    }
 
     platforms.textContent = icons;
   });
 
   row.addEventListener("mouseleave", () => {
     if (!card) return;
+
     card.style.display = "none";
+
     video.pause();
   });
 });
@@ -125,6 +195,7 @@ gameCards.forEach((card) => {
   if (!tagsData) return;
 
   const tagsContainer = card.querySelector(".tags");
+
   if (!tagsContainer) return;
 
   tagsContainer.innerHTML = "";
@@ -133,6 +204,7 @@ gameCards.forEach((card) => {
     if (!tag) return;
 
     const span = document.createElement("span");
+
     span.textContent = tag.trim();
 
     tagsContainer.appendChild(span);
