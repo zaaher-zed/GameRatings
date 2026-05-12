@@ -6,7 +6,12 @@ body {
   padding: 0;
   width: 100%;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #1b2838;
+  background: radial-gradient(
+    circle at top,
+    #24384d 0%,
+    #1b2838 45%,
+    #0f1722 100%
+  );
   color: white;
   overflow-x: hidden;
 }
@@ -21,9 +26,56 @@ header {
   height: 70px;
 }
 .logo {
-  width: 120px;
-  height: auto;
+  height: 67px;
+  width: auto;
+
+  object-fit: contain;
+
   display: block;
+
+  transform: scaleX(1.12);
+
+  transform-origin: left center;
+
+  filter: drop-shadow(0 0 6px rgba(255, 140, 0, 0.25));
+
+  transition: 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.04);
+
+  filter: drop-shadow(0 0 12px rgba(255, 140, 0, 0.55))
+    drop-shadow(0 0 24px rgba(102, 192, 244, 0.35));
+}
+
+header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  position: absolute;
+  left: -9999px;
+
+  margin: 0 0 0 10px;
+
+  color: #66c0f4;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+
+  text-shadow:
+    0 0 8px rgba(102, 192, 244, 0.5),
+    0 0 18px rgba(102, 192, 244, 0.25);
+
+  transition: 0.3s ease;
+}
+
+header h1:hover {
+  color: white;
+
+  text-shadow:
+    0 0 12px rgba(255, 255, 255, 0.6),
+    0 0 25px rgba(102, 192, 244, 0.5);
 }
 
 header ul {
@@ -62,30 +114,125 @@ a {
 }
 
 a:hover {
-  border-bottom: 1px white solid;
+  scale: 1.1;
 }
-/* all sections and section headers */
-section {
-  margin: 1vh auto;
-  padding: 20px;
-  text-align: center;
+/* banner container */
+.hero-banner {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-section h1 {
+/* banner img */
+.hero-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* blur */
+.hero-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.35),
+    rgba(15, 23, 32, 0.85)
+  );
+}
+
+/* content style text */
+.hero-content {
+  position: relative;
   text-align: center;
-  text-transform: capitalize;
+  color: white;
+  z-index: 2;
+  animation: fadeUp 1s ease forwards;
+}
+
+.hero-content h1 {
+  font-size: 52px;
+  margin: 0;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #66c0f4;
+  text-shadow: 0 0 20px rgba(102, 192, 244, 0.4);
+}
+
+.hero-content p {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #c7d5e0;
+}
+
+/* tags */
+.hero-tags {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hero-tags span {
+  background: rgba(102, 192, 244, 0.15);
+  border: 1px solid rgba(102, 192, 244, 0.3);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  color: #c7d5e0;
+  transition: 0.3s;
+}
+
+.hero-tags span:hover {
+  background: #66c0f4;
+  color: #0b141f;
+  transform: scale(1.05);
+}
+
+/* animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* make text blue when its active or hovered */
 header ul li a:hover,
 header ul li a.active {
   color: #66c0f4;
-  border-bottom: 2px #66c0f4 solid;
+  scale: 1.1;
 }
+
 /* table */
 .game-table {
   width: 70%;
-  margin: auto;
+  margin: 40px auto;
+  padding: 25px;
+
+  border-radius: 18px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(20, 30, 42, 0.92),
+    rgba(15, 22, 30, 0.96)
+  );
+
+  border: 1px solid #2a475e;
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
 }
 
 table {
@@ -95,7 +242,7 @@ table {
 /* header of table */
 caption {
   font-weight: bold;
-  padding-bottom: 5px;
+  padding-bottom: 20px;
   font-size: 20px;
 }
 
@@ -114,6 +261,7 @@ td {
 tr:hover {
   background-color: #1f2f42;
   transition: 0.2s;
+  scale: 1.01;
 }
 
 /* change color of 4th td from all columns */
@@ -200,6 +348,11 @@ tr td img {
   width: 113px;
   height: 40px;
   display: block;
+}
+
+/* a for name of games */
+table a:hover {
+  border-bottom: 1px solid #c7d5e0;
 }
 
 /* game details after hover in table */
