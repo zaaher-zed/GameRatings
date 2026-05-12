@@ -21,32 +21,42 @@ let mouseX = 0;
 let mouseY = 0;
 
 document.addEventListener("mousemove", (e) => {
-  mouseX = e.pageX;
-  mouseY = e.pageY;
+  mouseX = e.clientX;
+  mouseY = e.clientY;
 });
 
-setInterval(() => {
-  if (!card) return;
+// =====================
+// 🚀 Smooth positioning (requestAnimationFrame)
+// =====================
 
-  const offset = 20;
+function updateCardPosition() {
+  if (card) {
+    const offset = 20;
 
-  const cardWidth = card.offsetWidth;
-  const cardHeight = card.offsetHeight;
+    const cardWidth = card.offsetWidth;
+    const cardHeight = card.offsetHeight;
 
-  let x = mouseX + offset;
-  let y = mouseY + offset;
+    let x = mouseX + offset;
+    let y = mouseY + offset;
 
-  if (x + cardWidth > window.innerWidth) {
-    x = mouseX - cardWidth - offset;
+    if (x + cardWidth > window.innerWidth) {
+      x = mouseX - cardWidth - offset;
+    }
+    if (x < 0) x = offset;
+
+    if (y + cardHeight > window.innerHeight) {
+      y = mouseY - cardHeight - offset;
+    }
+    if (y < 0) y = offset;
+
+    card.style.left = x + "px";
+    card.style.top = y + "px";
   }
 
-  if (y + cardHeight > window.innerHeight) {
-    y = mouseY - cardHeight - offset;
-  }
+  requestAnimationFrame(updateCardPosition);
+}
 
-  card.style.left = x + "px";
-  card.style.top = y + "px";
-}, 16);
+requestAnimationFrame(updateCardPosition);
 
 // =====================
 // 🎮 Table hover cards
