@@ -4,6 +4,7 @@ GameRatings is a responsive front-end gaming catalog website built with HTML, CS
 The project allows users to explore popular games by category, including Online, MMORPG, Strategy, and Single Player games.
 
 The goal of this project was to practice building a real gaming-style user interface with clean layouts, interactive cards, hover effects, ranking tables, video previews, and a dark theme inspired by modern gaming platforms.
+🔗 **Live Demo:** [Try GameRatings Live](https://gemeratings.netlify.app/)
 
 ## ✨ Features
 
